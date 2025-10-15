@@ -14,5 +14,10 @@ namespace Order.Infra.Repositories
 
         public Task<bool> ExistsAsync(Guid orderId, CancellationToken ct)
             => db.Orders.AnyAsync(o => o.OrderId == orderId, ct);
+
+        public Task<Orders?> GetByIdAsync(Guid orderId, CancellationToken ct)
+            => db.Orders
+                .Include(o => o.Items)
+                .FirstOrDefaultAsync(o => o.OrderId == orderId, ct);
     }
 }

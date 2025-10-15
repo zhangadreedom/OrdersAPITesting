@@ -5,7 +5,7 @@ namespace Order.Domain;
 public interface IOrderRepository
 {
     /// <summary>
-    /// Adding anorder
+    /// Adding an order
     /// </summary>
     Task AddAsync(Orders order, CancellationToken ct);
 
@@ -13,4 +13,6 @@ public interface IOrderRepository
     /// Verify if an order exists or not (via OrderId)
     /// </summary>
     Task<bool> ExistsAsync(Guid orderId, CancellationToken ct);
+
+    Task<Orders?> GetByIdAsync(Guid orderId, CancellationToken ct);
 }

@@ -1,0 +1,26 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=5b7ddfb4_002D5fd7_002D4a2e_002Da759_002Ddef92c4b795a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Post_CreateOrder_Should_Return_201_And_Persist" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;And&gt;&#xD;
+      &lt;TestAncestor&gt;&#xD;
+        &lt;TestId&gt;xUnit::4BA57763-05FA-4515-99BE-57D846803179::net9.0::Order.UnitTests.OrderIntegrationTests&lt;/TestId&gt;&#xD;
+        &lt;TestId&gt;xUnit::4BA57763-05FA-4515-99BE-57D846803179::net9.0::Order.UnitTests.CreateOrderRequestValidationTests.TestEmptyCustomerName&lt;/TestId&gt;&#xD;
+      &lt;/TestAncestor&gt;&#xD;
+      &lt;Not&gt;&#xD;
+        &lt;TestAncestor&gt;&#xD;
+          &lt;TestId&gt;xUnit::4BA57763-05FA-4515-99BE-57D846803179::net9.0::Order.UnitTests.OrderIntegrationTests&lt;/TestId&gt;&#xD;
+        &lt;/TestAncestor&gt;&#xD;
+      &lt;/Not&gt;&#xD;
+    &lt;/And&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;xUnit::4BA57763-05FA-4515-99BE-57D846803179::net9.0::Order.UnitTests.OrderIntegrationTests.Get_ById_Should_Return_404_When_NotFound&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::4BA57763-05FA-4515-99BE-57D846803179::net9.0::Order.UnitTests.OrderIntegrationTests&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::4BA57763-05FA-4515-99BE-57D846803179::net9.0::Order.UnitTests.CreateOrderRequestValidationTests&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=aeb367d5_002De4ec_002D498f_002Da1ee_002Dafdeee52be99/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Post_CreateOrder_Should_Return_201_And_Persist #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::4BA57763-05FA-4515-99BE-57D846803179::net9.0::Order.UnitTests.OrderIntegrationTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
