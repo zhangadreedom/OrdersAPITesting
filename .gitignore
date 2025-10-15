@@ -11,3 +11,6 @@
 /src/Order.Domain/obj
 /src/Order.Infra/bin/Debug/net9.0
 /src/Order.Infra/obj
+/.vs/ProjectEvaluation
+/Order.UnitTests/bin/Debug/net9.0
+/Order.UnitTests/obj
