@@ -26,15 +26,14 @@ namespace Order.UnitTests
         [Fact]
         public async Task CreateOrderTest()
         {
-            // Arrange
             var orderId = Guid.NewGuid();
             var req = new CreateOrderRequest(
                 orderId,
                 "Li4",
                 DateTimeOffset.UtcNow,
-                new List<CreateOrderItem> { new(Guid.NewGuid(), 2) });
+                new List<CreateOrderItem> { new(Guid.NewGuid(), 5) });
 
-            // Act
+            
             var resp = await _client.PostAsJsonAsync("/api/Orders", req);
 
             // Assert
@@ -43,6 +42,11 @@ namespace Order.UnitTests
 
             var body = await resp.Content.ReadFromJsonAsync<CreateOrderResponse>();
             body!.OrderId.Should().Be(orderId);
+
+            var _order = await _client.GetFromJsonAsync<GetOrderResponse>($"/api/Orders/{orderId}");
+            _order.Should().NotBeNull();
+            _order!.CustomerName.Should().Be("Li4");
+            _order.Items.Should().ContainSingle(i => i.Quantity == 5);
         }
 
     }

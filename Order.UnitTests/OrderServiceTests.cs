@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using Microsoft.Extensions.Logging;
 using Moq;
 using Order.Application;
 using Order.Application.Services;
@@ -14,7 +15,7 @@ namespace Order.UnitTests
 
         public OrderServiceTests()
         {
-            _service = new OrderService(_orderRepo.Object);
+            _service = new OrderService(_orderRepo.Object, new Mock<ILogger<OrderService>>().Object);
         }
 
         [Fact]

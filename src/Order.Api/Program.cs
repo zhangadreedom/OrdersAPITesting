@@ -12,17 +12,15 @@ public sealed class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // 内置 OpenAPI（json/yaml 文档，没有 UI）
         builder.Services.AddOpenApi();
 
         builder.Services.AddControllers();
 
-        // 应用服务 & 验证
         builder.Services.AddScoped<IOrderService, OrderService>();
         builder.Services.AddFluentValidationAutoValidation();
         builder.Services.AddValidatorsFromAssembly(typeof(CreateOrderValidator).Assembly);
 
-        // 基础设施
+        // infrastructure
         var connectionString = builder.Configuration.GetConnectionString("Default")
                                ?? throw new InvalidOperationException("ConnectionString 'Default' is missing.");
 
@@ -33,13 +31,12 @@ public sealed class Program
 
         var app = builder.Build();
 
-        // 开发环境暴露 OpenAPI 文档（默认 /openapi/v1.json）
         if (app.Environment.IsDevelopment())
         {
             app.MapOpenApi();
         }
 
-        // 非测试环境启用 HTTPS 重定向
+        // Non-testing environments enable HTTPS redirection and ensure database is created
         if (!app.Environment.IsEnvironment("Testing"))
         {
             app.UseHttpsRedirection();

@@ -21,22 +21,20 @@ namespace Order.UnitTests
             builder.UseEnvironment("Testing");
             builder.ConfigureServices(services =>
             {
-                // 1) 移除生产注册的 DbContext（SQL Server）
+                // Remove the DbContext registered in production (remove SQL Server, using SQLite for testing)
                 services.RemoveAll<DbContextOptions<OrderDbContext>>();
                 services.RemoveAll<OrderDbContext>();
 
-                // 2) 创建一个共享的 In-Memory SQLite 连接（生命周期=整个工厂）
+                // Create a shared SQLite connection
                 _conn = new SqliteConnection("Filename=:memory:");
                 _conn.Open();
 
-                // 3) 用 SQLite 覆盖注册
                 services.AddDbContext<OrderDbContext>(option => option.UseSqlite(_conn!));
 
                 services.AddScoped<IOrderRepository, OrderRepository>();
 
-                // 4) 建表（用 EnsureCreated 即可；若你用迁移，这里可改成 Migrate）
-                var sp = services.BuildServiceProvider();
-                using var scope = sp.CreateScope();
+                var provider = services.BuildServiceProvider();
+                using var scope = provider.CreateScope();
                 var db = scope.ServiceProvider.GetRequiredService<OrderDbContext>();
                 db.Database.EnsureCreated();
             });

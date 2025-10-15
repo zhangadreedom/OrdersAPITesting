@@ -8,10 +8,10 @@ namespace Order.Application.Services
 {
     public interface IOrderService
     {
-        /// <summary>创建订单（幂等：OrderId 已存在时直接返回该 Id）</summary>
+        /// <summary>Creating an order, if exists, returns an ID</summary>
         Task<CreateOrderResponse> CreateAsync(CreateOrderRequest req, CancellationToken ct);
 
-        /// <summary>按 Id 查询订单；未找到返回 null</summary>
+        /// <summary>Searching order by ID; if not found, return null</summary>
         Task<GetOrderResponse?> GetAsync(Guid orderId, CancellationToken ct);
     }
 }
