@@ -1,0 +1,13 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/.vs/OrdersApi
+/src/Order.Api/bin/Debug/net9.0
+/src/Order.Api/obj
+/src/Order.Application/bin/Debug/net9.0
+/src/Order.Application/obj
+/src/Order.Domain/bin/Debug/net9.0
+/src/Order.Domain/obj
+/src/Order.Infra/bin/Debug/net9.0
+/src/Order.Infra/obj
